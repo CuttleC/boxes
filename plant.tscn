@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://coq01s3lst6u0"]
+
+[ext_resource type="Texture2D" uid="uid://3yaqi03ka23w" path="res://art/objective_complete.png" id="1_mbetm"]
+[ext_resource type="Texture2D" uid="uid://bf0ygrab558rj" path="res://art/objective_incomplete.png" id="2_qljma"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4oa58"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mbetm")
+}],
+"loop": true,
+"name": &"restored",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qljma")
+}],
+"loop": true,
+"name": &"wilted",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mbetm"]
+radius = 46.0
+height = 120.0
+
+[node name="Plant" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4oa58")
+animation = &"wilted"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mbetm")
