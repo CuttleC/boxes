@@ -1,5 +1,9 @@
 extends Area2D
 
+
+func _ready():
+	$AnimatedSprite2D.play("level_1")
+
 func enable_sprinkle():
 	$CollisionShape2D.disabled = false
 

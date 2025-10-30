@@ -3,7 +3,7 @@ var flower_letters: Array
 var plant_objectives: Array
 var blooming = false
 var time_for_another_flower_to_bloom = true
-var camera_in_place = true
+#var camera_in_place = true
 
 func _ready():
 	$TileMapLayer/Player.start($TileMapLayer/StartPosition.position)
@@ -13,8 +13,10 @@ func _ready():
 
 
 func _process(delta):
-	if !camera_in_place: return
-	if !blooming: return
+	#if !camera_in_place: return
+	if !blooming:
+		$CutsceneCam.position = $TileMapLayer/Player.position
+		return
 	if !time_for_another_flower_to_bloom: return
 	
 	var next_flower_letter = flower_letters.pop_front()
@@ -23,7 +25,7 @@ func _process(delta):
 	$Timer.start()
 	
 	#TODO: make the camera move to see all the flower letters
-	#TODO: make all the final pixel art (sal_walking, big plants withered and restored, small plants withered and restored, well, wall, flower letters, grass ground background, reward icon, water spray, fun plants)
+	#TODO: make all the final pixel art (sal_walking, big plants, grass ground background, fun plants)
 	#TODO: design overall level
 
 
@@ -46,6 +48,6 @@ func _on_plant_restored() -> void:
 
 
 func activate_cutscene_camera():
-	$CutsceneCam.position = $TileMapLayer/Player/Camera2D.position
-	
+	$CutsceneCam.make_current()
+	$CutsceneCam.move_to_target()
 	

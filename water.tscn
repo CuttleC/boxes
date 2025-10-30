@@ -1,17 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://vcy0vagvh8pc"]
+[gd_scene load_steps=14 format=3 uid="uid://vcy0vagvh8pc"]
 
 [ext_resource type="Script" uid="uid://cof20oa5em644" path="res://water.gd" id="1_746c1"]
-[ext_resource type="Texture2D" uid="uid://7apuwxpxr322" path="res://art/water_lvl_1.png" id="1_x4ob8"]
-[ext_resource type="Texture2D" uid="uid://cp5xm88qbm380" path="res://art/water_lvl_2.png" id="2_746c1"]
-[ext_resource type="Texture2D" uid="uid://cren4qb3pn5lu" path="res://art/water_lvl_3.png" id="3_3g7ry"]
-[ext_resource type="Texture2D" uid="uid://cgmlnniyjkpjn" path="res://art/water_lvl_4.png" id="4_wox83"]
-[ext_resource type="Texture2D" uid="uid://dbvrj03jp8c8s" path="res://art/water_lvl_5.png" id="5_ywqbu"]
+[ext_resource type="Texture2D" uid="uid://dwj0bnleecsy1" path="res://art/finalized/waterLvl_1_f0.png" id="2_ybsgd"]
+[ext_resource type="Texture2D" uid="uid://cn2jqc3ur6mjy" path="res://art/finalized/waterLvl_1_f1.png" id="3_jqebo"]
+[ext_resource type="Texture2D" uid="uid://v301tfbd1kv3" path="res://art/finalized/waterLvl_2_f0.png" id="4_eimxu"]
+[ext_resource type="Texture2D" uid="uid://bdslahwxy3t6j" path="res://art/finalized/waterLvl_2_f1.png" id="5_pawlg"]
+[ext_resource type="Texture2D" uid="uid://bc34j5tx150ps" path="res://art/finalized/waterLvl_3_f0.png" id="6_mkmo2"]
+[ext_resource type="Texture2D" uid="uid://b1gxi2ex1avn2" path="res://art/finalized/waterLvl_3_f1.png" id="7_hvr78"]
+[ext_resource type="Texture2D" uid="uid://d16hts3ilwd8o" path="res://art/finalized/waterLvl_4_f0.png" id="8_fdgjc"]
+[ext_resource type="Texture2D" uid="uid://br5c47u5xe3w3" path="res://art/finalized/waterLvl_4_f1.png" id="9_e2cli"]
+[ext_resource type="Texture2D" uid="uid://vw8m8i0p3sj6" path="res://art/finalized/waterLvl_5_f0.png" id="10_w2s4j"]
+[ext_resource type="Texture2D" uid="uid://dwhvnxlwbk5tf" path="res://art/finalized/waterLvl_5_f1.png" id="11_gxfug"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hn4mu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_x4ob8")
+"texture": ExtResource("2_ybsgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jqebo")
 }],
 "loop": true,
 "name": &"level_1",
@@ -19,7 +27,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_746c1")
+"texture": ExtResource("4_eimxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pawlg")
 }],
 "loop": true,
 "name": &"level_2",
@@ -27,7 +38,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_3g7ry")
+"texture": ExtResource("6_mkmo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hvr78")
 }],
 "loop": true,
 "name": &"level_3",
@@ -35,7 +49,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_wox83")
+"texture": ExtResource("8_fdgjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e2cli")
 }],
 "loop": true,
 "name": &"level_4",
@@ -43,7 +60,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ywqbu")
+"texture": ExtResource("10_w2s4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gxfug")
 }],
 "loop": true,
 "name": &"level_5",
@@ -61,6 +81,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hn4mu")
 animation = &"level_1"
+frame_progress = 0.205727
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

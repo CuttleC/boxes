@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8yqy6aql7yiq"]
 
 [ext_resource type="Script" uid="uid://dj5v4mv5bm7pr" path="res://reward.gd" id="1_6f2bs"]
-[ext_resource type="Texture2D" uid="uid://b3w07o2lc3liu" path="res://art/reward.png" id="1_qc4im"]
+[ext_resource type="Texture2D" uid="uid://woppscrq3p7q" path="res://art/finalized/reward_final.png" id="2_6f2bs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6f2bs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_qc4im")
+"texture": ExtResource("2_6f2bs")
 }],
 "loop": true,
 "name": &"default",

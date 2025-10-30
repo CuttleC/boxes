@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://x5hh3sbcmgf4"]
+[gd_scene load_steps=10 format=3 uid="uid://x5hh3sbcmgf4"]
 
 [ext_resource type="Script" uid="uid://y0far1yhdxu2" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cdb4wh52vcybf" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://coq01s3lst6u0" path="res://plant.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b7ehmcsariqkw" path="res://wall.tscn" id="2_kek77"]
 [ext_resource type="PackedScene" uid="uid://boyumyisgsdj7" path="res://well.tscn" id="4_lquwl"]
 [ext_resource type="Texture2D" uid="uid://bmqf6ynrfevti" path="res://art/wall.png" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b201yf0dso73l" path="res://fun_plant.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://l8t87qudambv" path="res://flower_letter.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://bhhpc03o0mrp1" path="res://cutscene_cam.gd" id="8_5vw27"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
@@ -21,6 +23,15 @@ position = Vector2(246, 377)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMapLayer/walls"]
 polygon = PackedVector2Array(0, 0, 1153, 0, 1151, 648, -2, 648, -1, 4, -138, -112, -142, 738, 1277, 752, 1262, -103, -133, -115)
+
+[node name="Wall" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+position = Vector2(988, 199)
+
+[node name="Wall2" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1000, 266)
+
+[node name="Wall3" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1031, 333)
 
 [node name="Well" parent="TileMapLayer" instance=ExtResource("4_lquwl")]
 position = Vector2(261, 511)
@@ -47,6 +58,9 @@ position = Vector2(957, 529)
 
 [node name="FunPlant5" parent="TileMapLayer/All_Fun_Plants" instance=ExtResource("5_272bh")]
 position = Vector2(1006, 562)
+
+[node name="Plant2" parent="TileMapLayer" instance=ExtResource("2_0xm2m")]
+position = Vector2(94, 243)
 
 [node name="Wall_Sprites" type="Node2D" parent="."]
 
@@ -198,10 +212,13 @@ position = Vector2(586, 76)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
 
-[node name="CutsceneCam" type="Camera2D" parent="."]
+[node name="CutsceneCam" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("8_5vw27")
+target = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="CutsceneCam"]
 position = Vector2(530, 31)
 
 [connection signal="restored" from="TileMapLayer/Plant" to="." method="_on_plant_restored"]
+[connection signal="restored" from="TileMapLayer/Plant2" to="." method="_on_plant_restored"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

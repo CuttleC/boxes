@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7ehmcsariqkw"]
+
+[ext_resource type="Texture2D" uid="uid://ceenuq2vhjvxn" path="res://art/finalized/wall.png" id="1_xxgf6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4f30"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xxgf6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iuee5"]
+radius = 32.0
+height = 64.0
+
+[node name="Wall" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y4f30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_iuee5")
