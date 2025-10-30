@@ -198,10 +198,5 @@ position = Vector2(586, 76)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
 
-[node name="CutsceneCam" type="Camera2D" parent="."]
-
-[node name="Marker2D" type="Marker2D" parent="CutsceneCam"]
-position = Vector2(530, 31)
-
 [connection signal="restored" from="TileMapLayer/Plant" to="." method="_on_plant_restored"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

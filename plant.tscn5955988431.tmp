@@ -28,10 +28,10 @@ radius = 46.0
 height = 120.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qljma"]
-radius = 75.0
-height = 150.0
+radius = 50.0
+height = 128.0
 
-[node name="Plant" type="StaticBody2D" groups=["plant_objective"]]
+[node name="Plant" type="StaticBody2D"]
 script = ExtResource("1_qljma")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -51,7 +51,3 @@ offset_left = -51.0
 offset_top = -100.0
 offset_right = 51.0
 offset_bottom = -73.0
-show_percentage = false
-
-[node name="RewardMarker" type="Marker2D" parent="."]
-position = Vector2(0, 133)

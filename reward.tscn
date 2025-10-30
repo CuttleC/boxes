@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8yqy6aql7yiq"]
+
+[ext_resource type="Script" uid="uid://dj5v4mv5bm7pr" path="res://reward.gd" id="1_6f2bs"]
+[ext_resource type="Texture2D" uid="uid://b3w07o2lc3liu" path="res://art/reward.png" id="1_qc4im"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6f2bs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qc4im")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jggsb"]
+radius = 32.0
+height = 64.0
+
+[node name="Reward" type="Area2D" groups=["reward"]]
+script = ExtResource("1_6f2bs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6f2bs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_jggsb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

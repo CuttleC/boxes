@@ -54,7 +54,7 @@ animations = [{
 radius = 60.0
 height = 158.0
 
-[node name="Water" type="Area2D"]
+[node name="Water" type="Area2D" groups=["water"]]
 script = ExtResource("1_746c1")
 metadata/_edit_group_ = true
 

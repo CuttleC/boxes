@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b201yf0dso73l"]
+
+[ext_resource type="Script" uid="uid://c4txqho423ip6" path="res://fun_plant.gd" id="1_r4ijk"]
+[ext_resource type="Texture2D" uid="uid://cy4vp5bm2c4u2" path="res://art/letter_flower.png" id="2_mgr50"]
+[ext_resource type="Texture2D" uid="uid://c0mnyix7j1j27" path="res://art/wilted_letter_flowers.png" id="3_usxgq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vb67h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mgr50")
+}],
+"loop": true,
+"name": &"restored",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_usxgq")
+}],
+"loop": true,
+"name": &"wilted",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5gag"]
+radius = 16.0
+height = 32.0
+
+[node name="FunPlant" type="Area2D"]
+script = ExtResource("1_r4ijk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vb67h")
+animation = &"wilted"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_t5gag")

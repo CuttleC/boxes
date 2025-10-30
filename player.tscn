@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdb4wh52vcybf"]
+[gd_scene load_steps=8 format=3 uid="uid://cdb4wh52vcybf"]
 
 [ext_resource type="Script" uid="uid://b2ppsm1mqknmw" path="res://player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://5dymlpyanda1" path="res://art/walk_frame_0.png" id="1_onrkg"]
@@ -31,6 +31,10 @@ animations = [{
 radius = 22.0
 height = 64.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqtel"]
+radius = 32.0
+height = 98.0
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("water")]
 script = ExtResource("1_i3pqv")
 water = NodePath("Water")
@@ -51,3 +55,12 @@ offset_top = -85.0
 offset_right = 41.0
 offset_bottom = -58.0
 show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_hqtel")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
