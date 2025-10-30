@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 400
 @export var water: Area2D
-var MAX_WATER = 150
+var MAX_WATER = 100
 var water_quantity = MAX_WATER
 var water_graphics = ["level_2","level_3","level_4","level_5"]
 
