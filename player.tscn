@@ -1,15 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdb4wh52vcybf"]
+[gd_scene load_steps=15 format=3 uid="uid://cdb4wh52vcybf"]
 
 [ext_resource type="Script" uid="uid://b2ppsm1mqknmw" path="res://player.gd" id="1_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://5dymlpyanda1" path="res://art/walk_frame_0.png" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://dcpfhjjndldgq" path="res://art/walk_frame_1.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://8yvavnogvwfh" path="res://art/finalized/Sal/sal_idle_f0.png" id="2_nvl01"]
+[ext_resource type="Texture2D" uid="uid://cqa3bomalpcyq" path="res://art/finalized/Sal/sal_idle_f1.png" id="3_ivps1"]
 [ext_resource type="PackedScene" uid="uid://vcy0vagvh8pc" path="res://water.tscn" id="4_hqtel"]
+[ext_resource type="Texture2D" uid="uid://cxtronyaddxw3" path="res://art/finalized/Sal/sal_idle_f2.png" id="4_urp6f"]
+[ext_resource type="Texture2D" uid="uid://dbmqdfnvd17ps" path="res://art/finalized/Sal/sal_walk_f0.png" id="5_bwjto"]
+[ext_resource type="Texture2D" uid="uid://bbs05urnecvi" path="res://art/finalized/Sal/sal_walk_f1.png" id="6_606se"]
+[ext_resource type="Texture2D" uid="uid://duwgcg42vxtmg" path="res://art/finalized/Sal/sal_walk_f2.png" id="7_u1c27"]
+[ext_resource type="Texture2D" uid="uid://wh5dr7x2bb3u" path="res://art/finalized/Sal/sal_walk_f3.png" id="8_op7ga"]
+[ext_resource type="Texture2D" uid="uid://dou2vnn822cgy" path="res://art/finalized/Sal/sal_walk_f4.png" id="9_q13i1"]
+[ext_resource type="Texture2D" uid="uid://bk3l5gvttbrgo" path="res://art/finalized/Sal/sal_walk_f5.png" id="10_pylmc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqtel"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_onrkg")
+"texture": ExtResource("2_nvl01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ivps1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_urp6f")
 }],
 "loop": true,
 "name": &"idle",
@@ -17,10 +30,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_onrkg")
+"texture": ExtResource("5_bwjto")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_i3pqv")
+"texture": ExtResource("6_606se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u1c27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_op7ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q13i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pylmc")
 }],
 "loop": true,
 "name": &"walk",
@@ -41,13 +66,13 @@ water = NodePath("Water")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hqtel")
-animation = &"idle"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_sweqy")
 
 [node name="Water" parent="." instance=ExtResource("4_hqtel")]
-position = Vector2(79, 0)
+position = Vector2(81, 7)
 
 [node name="WaterBar" type="ProgressBar" parent="."]
 offset_left = -41.0

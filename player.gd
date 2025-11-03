@@ -10,6 +10,7 @@ var water_graphics = ["level_2","level_3","level_4","level_5"]
 func _ready():
 	set_water_bar()
 	$Camera2D.make_current()
+	$AnimatedSprite2D.play("idle")
 
 
 func _physics_process(delta):
@@ -25,9 +26,6 @@ func _physics_process(delta):
 	
 	if temp_velocity.length() > 0:
 		temp_velocity = temp_velocity.normalized() * speed
-		$AnimatedSprite2D.play()
-	else:
-		$AnimatedSprite2D.stop()
 	
 	if temp_velocity.x != 0 || temp_velocity.y != 0:
 		$AnimatedSprite2D.animation = "walk"
