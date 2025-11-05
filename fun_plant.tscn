@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://b201yf0dso73l"]
 
 [ext_resource type="Script" uid="uid://c4txqho423ip6" path="res://fun_plant.gd" id="1_r4ijk"]
-[ext_resource type="Texture2D" uid="uid://cy4vp5bm2c4u2" path="res://art/letter_flower.png" id="2_mgr50"]
-[ext_resource type="Texture2D" uid="uid://c0mnyix7j1j27" path="res://art/wilted_letter_flowers.png" id="3_usxgq"]
+[ext_resource type="Texture2D" uid="uid://delx1vavwq1oy" path="res://art/finalized/fun_plant_1_bloomed.png" id="2_r4ijk"]
+[ext_resource type="Texture2D" uid="uid://psavkt6fe0l0" path="res://art/finalized/fun_plant_1_wilted.png" id="3_mgr50"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vb67h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mgr50")
+"texture": ExtResource("2_r4ijk")
 }],
 "loop": true,
 "name": &"restored",
@@ -16,7 +16,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_usxgq")
+"texture": ExtResource("3_mgr50")
 }],
 "loop": true,
 "name": &"wilted",

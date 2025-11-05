@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccoqscqedkmq1"]
+
+[ext_resource type="Texture2D" uid="uid://doebd08dree5u" path="res://art/finalized/deco_cobblestones.png" id="1_ui8gr"]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ui8gr")

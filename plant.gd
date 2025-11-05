@@ -10,6 +10,7 @@ var is_restored = false
 func _ready():
 	$SaturationBar.max_value = MAX_SATURATION
 	set_saturation_bar()
+	$AnimatedSprite2D.play("wilted")
 
 
 func _physics_process(delta):

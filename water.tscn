@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://vcy0vagvh8pc"]
+[gd_scene load_steps=16 format=3 uid="uid://vcy0vagvh8pc"]
 
 [ext_resource type="Script" uid="uid://cof20oa5em644" path="res://water.gd" id="1_746c1"]
 [ext_resource type="Texture2D" uid="uid://dwj0bnleecsy1" path="res://art/finalized/waterLvl_1_f0.png" id="2_ybsgd"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://br5c47u5xe3w3" path="res://art/finalized/waterLvl_4_f1.png" id="9_e2cli"]
 [ext_resource type="Texture2D" uid="uid://vw8m8i0p3sj6" path="res://art/finalized/waterLvl_5_f0.png" id="10_w2s4j"]
 [ext_resource type="Texture2D" uid="uid://dwhvnxlwbk5tf" path="res://art/finalized/waterLvl_5_f1.png" id="11_gxfug"]
+[ext_resource type="Texture2D" uid="uid://g3nwp178uk6c" path="res://art/finalized/water_level_6_f0.png" id="12_eimxu"]
+[ext_resource type="Texture2D" uid="uid://dcubou8yk5c40" path="res://art/finalized/water_level_6_f1.png" id="13_pawlg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hn4mu"]
 animations = [{
@@ -68,6 +70,17 @@ animations = [{
 "loop": true,
 "name": &"level_5",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_eimxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pawlg")
+}],
+"loop": true,
+"name": &"level_6",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x4ob8"]
@@ -81,7 +94,6 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hn4mu")
 animation = &"level_1"
-frame_progress = 0.205727
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var water: Area2D
 var MAX_WATER = 100
 var water_quantity = MAX_WATER
-var water_graphics = ["level_2","level_3","level_4","level_5"]
+var water_graphics = ["level_2","level_3","level_4","level_5","level_6"]
 
 
 func _ready():

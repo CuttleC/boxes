@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://x5hh3sbcmgf4"]
+[gd_scene load_steps=13 format=4 uid="uid://x5hh3sbcmgf4"]
 
 [ext_resource type="Script" uid="uid://y0far1yhdxu2" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cdb4wh52vcybf" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://coq01s3lst6u0" path="res://plant.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://ca7i7j0w6qe75" path="res://art/finalized/grassyground_1.png" id="2_4c57u"]
 [ext_resource type="PackedScene" uid="uid://b7ehmcsariqkw" path="res://wall.tscn" id="2_kek77"]
+[ext_resource type="PackedScene" uid="uid://ccoqscqedkmq1" path="res://cobble_deco.tscn" id="3_4c57u"]
 [ext_resource type="PackedScene" uid="uid://boyumyisgsdj7" path="res://well.tscn" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://b201yf0dso73l" path="res://fun_plant.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://l8t87qudambv" path="res://flower_letter.tscn" id="6_7mycd"]
@@ -22,148 +23,726 @@ sources/0 = SubResource("TileSetAtlasSource_kek77")
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+[node name="Grass" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD6//r/AAAAAAAAAAD7//r/AAAAAAAAAAD8//r/AAAAAAAAAAD9//r/AAAAAAAAAAD+//r/AAAAAAAAAAD///r/AAAAAAAAAAAAAPr/AAAAAAAAAAABAPr/AAAAAAAAAAACAPr/AAAAAAAAAAADAPr/AAAAAAAAAAAEAPr/AAAAAAAAAAAFAPr/AAAAAAAAAAAGAPr/AAAAAAAAAAAHAPr/AAAAAAAAAAAIAPr/AAAAAAAAAAAJAPr/AAAAAAAAAAD5//r/AAAAAAAAAAD5//v/AAAAAAAAAAD6//v/AAAAAAAAAAD7//v/AAAAAAAAAAD8//v/AAAAAAAAAAD9//v/AAAAAAAAAAD+//v/AAAAAAAAAAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAABAPv/AAAAAAAAAAACAPv/AAAAAAAAAAADAPv/AAAAAAAAAAAEAPv/AAAAAAAAAAAFAPv/AAAAAAAAAAAGAPv/AAAAAAAAAAAHAPv/AAAAAAAAAAAIAPv/AAAAAAAAAAAJAPv/AAAAAAAAAAAJAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAGAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAADAPz/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//z/AAAAAAAAAAD7//z/AAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAD5//3/AAAAAAAAAAD6//3/AAAAAAAAAAD7//3/AAAAAAAAAAD8//3/AAAAAAAAAAD9//3/AAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAJAP3/AAAAAAAAAAAJAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAADAP7/AAAAAAAAAAACAP7/AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9//7/AAAAAAAAAAD8//7/AAAAAAAAAAD7//7/AAAAAAAAAAD6//7/AAAAAAAAAAD5//7/AAAAAAAAAAD5////AAAAAAAAAAD6////AAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAJAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAD5/wEAAAAAAAAAAAD6/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD6/wIAAAAAAAAAAAD5/wIAAAAAAAAAAAD5/wMAAAAAAAAAAAD6/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAD8/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAADAAQAAAAAAAAAAAACAAQAAAAAAAAAAAABAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAD//wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD7/wQAAAAAAAAAAAD6/wQAAAAAAAAAAAD5/wQAAAAAAAAAAAD5/wUAAAAAAAAAAAD6/wUAAAAAAAAAAAD7/wUAAAAAAAAAAAD8/wUAAAAAAAAAAAD9/wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD//wUAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAADAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAAAAAAAAAAAAAYAAAAAAAAAAAD//wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD8/wYAAAAAAAAAAAD7/wYAAAAAAAAAAAD6/wYAAAAAAAAAAAD5/wYAAAAAAAAAAAD5/wcAAAAAAAAAAAD6/wcAAAAAAAAAAAD7/wcAAAAAAAAAAAD8/wcAAAAAAAAAAAD9/wcAAAAAAAAAAAD+/wcAAAAAAAAAAAD//wcAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAPr/AAAAAAAAAAAKAPv/AAAAAAAAAAAKAPz/AAAAAAAAAAAKAP3/AAAAAAAAAAAKAP7/AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAALAAAAAAAAAAAAAAALAAEAAAAAAAAAAAALAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAAAAAAAAAAAAAALAPr/AAAAAAAAAAALAPv/AAAAAAAAAAALAPz/AAAAAAAAAAALAP3/AAAAAAAAAAALAP7/AAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAQAAAAAAAAAAAD4//r/AAAAAAAAAAD4//v/AAAAAAAAAAD4//z/AAAAAAAAAAD4//3/AAAAAAAAAAD4//7/AAAAAAAAAAD4////AAAAAAAAAAD4/wAAAAAAAAAAAAD4/wEAAAAAAAAAAAD4/wIAAAAAAAAAAAD4/wMAAAAAAAAAAAD4/wQAAAAAAAAAAAD4/wUAAAAAAAAAAAD4/wYAAAAAAAAAAAD4/wcAAAAAAAAAAAD4/wgAAAAAAAAAAAD5/wgAAAAAAAAAAAD6/wgAAAAAAAAAAAD7/wgAAAAAAAAAAAD8/wgAAAAAAAAAAAD9/wgAAAAAAAAAAAD+/wgAAAAAAAAAAAD//wgAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAADAAkAAAAAAAAAAAACAAkAAAAAAAAAAAABAAkAAAAAAAAAAAAAAAkAAAAAAAAAAAD//wkAAAAAAAAAAAD+/wkAAAAAAAAAAAD9/wkAAAAAAAAAAAD8/wkAAAAAAAAAAAD7/wkAAAAAAAAAAAD6/wkAAAAAAAAAAAD5/wkAAAAAAAAAAAD4/wkAAAAAAAAAAAD4/woAAAAAAAAAAAD5/woAAAAAAAAAAAD6/woAAAAAAAAAAAD7/woAAAAAAAAAAAD8/woAAAAAAAAAAAD9/woAAAAAAAAAAAD+/woAAAAAAAAAAAD//woAAAAAAAAAAAAAAAoAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_4c57u")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="Deco" type="TileMapLayer" parent="."]
+
+[node name="Area2D" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(554, 398)
+
+[node name="Area2D2" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(562, 462)
+
+[node name="Area2D42" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(624, 520)
+
+[node name="Area2D43" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(767, 517)
+
+[node name="Area2D44" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(833, 520)
+
+[node name="Area2D45" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(971, 508)
+
+[node name="Area2D46" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1096, 514)
+
+[node name="Area2D47" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1157, 517)
+
+[node name="Area2D48" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1154, 580)
+
+[node name="Area2D49" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1273, 579)
+
+[node name="Area2D50" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1339, 588)
+
+[node name="Area2D51" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1403, 579)
+
+[node name="Area2D52" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1543, 589)
+
+[node name="Area2D53" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1611, 584)
+
+[node name="Area2D54" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1675, 588)
+
+[node name="Area2D55" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1809, 595)
+
+[node name="Area2D3" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(555, 527)
+
+[node name="Area2D4" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(555, 592)
+
+[node name="Area2D5" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(543, 659)
+
+[node name="Area2D6" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(551, 723)
+
+[node name="Area2D7" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(544, 784)
+
+[node name="Area2D8" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(545, 848)
+
+[node name="Area2D16" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(547, 915)
+
+[node name="Area2D17" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(543, 979)
+
+[node name="Area2D18" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(611, 1038)
+
+[node name="Area2D27" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(544, 1043)
+
+[node name="Area2D19" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(674, 1043)
+
+[node name="Area2D20" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(743, 1031)
+
+[node name="Area2D21" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(808, 1033)
+
+[node name="Area2D29" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(881, 1091)
+
+[node name="Area2D30" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(881, 1157)
+
+[node name="Area2D31" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(884, 1221)
+
+[node name="Area2D34" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(882, 1285)
+
+[node name="Area2D35" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(817, 1284)
+
+[node name="Area2D36" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(749, 1286)
+
+[node name="Area2D37" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(686, 1279)
+
+[node name="Area2D32" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(952, 1214)
+
+[node name="Area2D33" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1020, 1220)
+
+[node name="Area2D22" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(877, 1027)
+
+[node name="Area2D23" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(945, 1031)
+
+[node name="Area2D38" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1014, 1023)
+
+[node name="Area2D39" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1147, 1019)
+
+[node name="Area2D40" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1134, 880)
+
+[node name="Area2D41" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(1148, 814)
+
+[node name="Area2D24" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(804, 910)
+
+[node name="Area2D28" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(808, 973)
+
+[node name="Area2D25" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(812, 843)
+
+[node name="Area2D9" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(478, 911)
+
+[node name="Area2D10" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(412, 914)
+
+[node name="Area2D11" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(281, 916)
+
+[node name="Area2D13" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(217, 910)
+
+[node name="Area2D14" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(150, 921)
+
+[node name="Area2D15" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(83, 918)
+
+[node name="Area2D26" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(18, 925)
+
+[node name="Area2D12" parent="Deco" instance=ExtResource("3_4c57u")]
+position = Vector2(346, 908)
+
+[node name="GameObjects" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD9//z/AAAAAAAAAAD+//z/AAAAAAAAAAD///z/AAAAAAAAAAAAAPz/AAAAAAAAAAABAPz/AAAAAAAAAAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAAGAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAJAPz/AAAAAAAAAAAJAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAADAP3/AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAAAAAD+//3/AAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAAJAP//AAAAAAAAAAAIAP//AAAAAAAAAAAHAP//AAAAAAAAAAAGAP//AAAAAAAAAAAFAP//AAAAAAAAAAAEAP//AAAAAAAAAAADAP//AAAAAAAAAAACAP//AAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAADAAMAAAAAAAAAAAACAAMAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAD//wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD+/wQAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAADAAUAAAAAAAAAAAACAAUAAAAAAAAAAAABAAUAAAAAAAAAAAAAAAUAAAAAAAAAAAD//wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD9/wUAAAAAAAAAAAD8/wUAAAAAAAAAAAD8/wYAAAAAAAAAAAD9/wYAAAAAAAAAAAD+/wYAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAADAAcAAAAAAAAAAAACAAcAAAAAAAAAAAABAAcAAAAAAAAAAAAAAAcAAAAAAAAAAAD//wcAAAAAAAAAAAD+/wcAAAAAAAAAAAD9/wcAAAAAAAAAAAD8/wcAAAAAAAAAAAD8/wgAAAAAAAAAAAD9/wgAAAAAAAAAAAD+/wgAAAAAAAAAAAD//wgAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAADAAkAAAAAAAAAAAACAAkAAAAAAAAAAAABAAkAAAAAAAAAAAAAAAkAAAAAAAAAAAD//wkAAAAAAAAAAAD+/wkAAAAAAAAAAAD9/wkAAAAAAAAAAAD8/wkAAAAAAAAAAAD8//z/AAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAAKAPv/AAAAAAAAAAAJAPv/AAAAAAAAAAAIAPv/AAAAAAAAAAAHAPv/AAAAAAAAAAAGAPv/AAAAAAAAAAAFAPv/AAAAAAAAAAAEAPv/AAAAAAAAAAADAPv/AAAAAAAAAAACAPv/AAAAAAAAAAABAPv/AAAAAAAAAAAAAPv/AAAAAAAAAAD///v/AAAAAAAAAAD+//v/AAAAAAAAAAD9//v/AAAAAAAAAAD8//v/AAAAAAAAAAD8//r/AAAAAAAAAAD9//r/AAAAAAAAAAD+//r/AAAAAAAAAAD///r/AAAAAAAAAAAAAPr/AAAAAAAAAAABAPr/AAAAAAAAAAACAPr/AAAAAAAAAAADAPr/AAAAAAAAAAAEAPr/AAAAAAAAAAAFAPr/AAAAAAAAAAAGAPr/AAAAAAAAAAAHAPr/AAAAAAAAAAAIAPr/AAAAAAAAAAAJAPr/AAAAAAAAAAAKAPr/AAAAAAAAAAAKAPn/AAAAAAAAAAAJAPn/AAAAAAAAAAAIAPn/AAAAAAAAAAAHAPn/AAAAAAAAAAAGAPn/AAAAAAAAAAAFAPn/AAAAAAAAAAAEAPn/AAAAAAAAAAADAPn/AAAAAAAAAAACAPn/AAAAAAAAAAABAPn/AAAAAAAAAAAAAPn/AAAAAAAAAAD///n/AAAAAAAAAAD+//n/AAAAAAAAAAD9//n/AAAAAAAAAAD8//n/AAAAAAAAAAD7//n/AAAAAAAAAAD7//r/AAAAAAAAAAD7//v/AAAAAAAAAAD7//z/AAAAAAAAAAD7//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wMAAAAAAAAAAAD7/wQAAAAAAAAAAAD7/wUAAAAAAAAAAAD7/wYAAAAAAAAAAAD6/wMAAAAAAAAAAAD6/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wcAAAAAAAAAAAD7/wgAAAAAAAAAAAD7/wkAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAAAAAAAAAALAAcAAAAAAAAAAAALAAYAAAAAAAAAAAALAAUAAAAAAAAAAAALAAQAAAAAAAAAAAALAAMAAAAAAAAAAAALAAIAAAAAAAAAAAALAAEAAAAAAAAAAAALAAAAAAAAAAAAAAALAP//AAAAAAAAAAAKAP//AAAAAAAAAAAKAP7/AAAAAAAAAAAKAP3/AAAAAAAAAAAKAPz/AAAAAAAAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAADAAoAAAAAAAAAAAACAAoAAAAAAAAAAAABAAoAAAAAAAAAAAAAAAoAAAAAAAAAAAD//woAAAAAAAAAAAD+/woAAAAAAAAAAAD9/woAAAAAAAAAAAD8/woAAAAAAAAAAAD7/woAAAAAAAAAAAD6/woAAAAAAAAAAAD6/wkAAAAAAAAAAAD6/wgAAAAAAAAAAAD6/wcAAAAAAAAAAAD6/wYAAAAAAAAAAAD6/wUAAAAAAAAAAAD6/wQAAAAAAAAAAAD6/wEAAAAAAAAAAAD6/wAAAAAAAAAAAAD6////AAAAAAAAAAD6//7/AAAAAAAAAAD6//3/AAAAAAAAAAD6//z/AAAAAAAAAAD6//v/AAAAAAAAAAD6//r/AAAAAAAAAAD6//n/AAAAAAAAAAD6//j/AAAAAAAAAAD7//j/AAAAAAAAAAD8//j/AAAAAAAAAAD9//j/AAAAAAAAAAD+//j/AAAAAAAAAAD///j/AAAAAAAAAAAAAPj/AAAAAAAAAAABAPj/AAAAAAAAAAACAPj/AAAAAAAAAAADAPj/AAAAAAAAAAAEAPj/AAAAAAAAAAAFAPj/AAAAAAAAAAAGAPj/AAAAAAAAAAAHAPj/AAAAAAAAAAAIAPj/AAAAAAAAAAAJAPj/AAAAAAAAAAAKAPj/AAAAAAAAAAALAPj/AAAAAAAAAAALAPn/AAAAAAAAAAALAPr/AAAAAAAAAAALAPv/AAAAAAAAAAALAPz/AAAAAAAAAAALAP3/AAAAAAAAAAALAP7/AAAAAAAAAAA=")
 
-[node name="StartPosition" type="Marker2D" parent="TileMapLayer"]
+[node name="StartPosition" type="Marker2D" parent="GameObjects"]
 position = Vector2(231, 222)
 
-[node name="All_Fun_Plants" type="Node2D" parent="TileMapLayer"]
+[node name="All_Fun_Plants" type="Node2D" parent="GameObjects"]
 
-[node name="FunPlant" parent="TileMapLayer/All_Fun_Plants" instance=ExtResource("5_272bh")]
+[node name="FunPlant" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
 position = Vector2(473, 224)
 
-[node name="FunPlant2" parent="TileMapLayer/All_Fun_Plants" instance=ExtResource("5_272bh")]
+[node name="FunPlant2" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
 position = Vector2(384, 316)
 
-[node name="FunPlant3" parent="TileMapLayer/All_Fun_Plants" instance=ExtResource("5_272bh")]
+[node name="FunPlant3" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
 position = Vector2(52, 274)
 
-[node name="FunPlant4" parent="TileMapLayer/All_Fun_Plants" instance=ExtResource("5_272bh")]
+[node name="FunPlant4" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
 position = Vector2(89, 184)
 
-[node name="FunPlant5" parent="TileMapLayer/All_Fun_Plants" instance=ExtResource("5_272bh")]
+[node name="FunPlant5" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
 position = Vector2(669, 285)
 
-[node name="walls" type="StaticBody2D" parent="TileMapLayer"]
+[node name="FunPlant6" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(785, 358)
 
-[node name="Wall" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="FunPlant7" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1046, 208)
+
+[node name="FunPlant8" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1186, 233)
+
+[node name="FunPlant9" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(229, 610)
+
+[node name="FunPlant10" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(315, 574)
+
+[node name="FunPlant11" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(89, 818)
+
+[node name="FunPlant12" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(-105, 735)
+
+[node name="FunPlant13" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(-254, 790)
+
+[node name="FunPlant14" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(-302, 889)
+
+[node name="FunPlant15" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(-244, 915)
+
+[node name="FunPlant16" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(-270, 1138)
+
+[node name="FunPlant17" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(-106, 1217)
+
+[node name="FunPlant18" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(96, 1139)
+
+[node name="FunPlant19" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(136, 1061)
+
+[node name="FunPlant20" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(234, 1070)
+
+[node name="FunPlant21" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(278, 1200)
+
+[node name="FunPlant22" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(204, 1279)
+
+[node name="FunPlant23" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(464, 1086)
+
+[node name="FunPlant24" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(547, 1146)
+
+[node name="FunPlant25" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(746, 1224)
+
+[node name="FunPlant26" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(776, 1336)
+
+[node name="FunPlant27" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(496, 1380)
+
+[node name="FunPlant28" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(970, 1122)
+
+[node name="FunPlant29" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1033, 1380)
+
+[node name="FunPlant30" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1199, 1312)
+
+[node name="FunPlant31" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1222, 1124)
+
+[node name="FunPlant32" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(909, 934)
+
+[node name="FunPlant33" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(963, 834)
+
+[node name="FunPlant34" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1357, 709)
+
+[node name="FunPlant35" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1455, 683)
+
+[node name="FunPlant36" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1581, 700)
+
+[node name="FunPlant37" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1626, 674)
+
+[node name="FunPlant38" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1633, 719)
+
+[node name="FunPlant39" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1748, 679)
+
+[node name="FunPlant50" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1704, 650)
+
+[node name="FunPlant51" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1982, 647)
+
+[node name="FunPlant52" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1809, 447)
+
+[node name="FunPlant53" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1838, 482)
+
+[node name="FunPlant54" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1475, 543)
+
+[node name="FunPlant55" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1734, 552)
+
+[node name="FunPlant56" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1232, 674)
+
+[node name="FunPlant57" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1261, 717)
+
+[node name="FunPlant58" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1216, 750)
+
+[node name="FunPlant40" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1835, 707)
+
+[node name="FunPlant41" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(2002, 700)
+
+[node name="FunPlant42" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1976, 459)
+
+[node name="FunPlant43" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(2029, 492)
+
+[node name="FunPlant44" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1764, 459)
+
+[node name="FunPlant45" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1645, 452)
+
+[node name="FunPlant46" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1562, 483)
+
+[node name="FunPlant47" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1426, 466)
+
+[node name="FunPlant48" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1292, 469)
+
+[node name="FunPlant49" parent="GameObjects/All_Fun_Plants" instance=ExtResource("5_272bh")]
+position = Vector2(1171, 419)
+
+[node name="walls" type="StaticBody2D" parent="GameObjects"]
+
+[node name="Wall" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(20, 94)
 
-[node name="Wall2" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall2" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(105, 87)
 
-[node name="Wall3" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall3" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(185, 99)
 
-[node name="Wall4" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall4" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(262, 84)
 
-[node name="Wall5" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall5" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(341, 95)
 
-[node name="Wall6" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall6" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(412, 79)
 
-[node name="Wall7" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall7" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(491, 90)
 
-[node name="Wall9" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall9" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(644, 79)
 
-[node name="Wall10" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall10" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(728, 74)
 
-[node name="Wall13" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall13" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(965, 69)
 
-[node name="Wall14" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall14" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(1046, 66)
 
-[node name="Wall15" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall15" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(1125, 72)
 
-[node name="Wall16" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall16" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(-32, 158)
 
-[node name="Wall17" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall17" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(-55, 226)
 
-[node name="Wall18" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall18" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(-40, 296)
 
-[node name="Wall19" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall19" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(-72, 366)
 
-[node name="Wall20" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall20" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(-63, 435)
 
-[node name="Wall21" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall21" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(-66, 505)
 
-[node name="Wall22" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall22" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(-70, 575)
 
-[node name="Wall23" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall23" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(-56, 648)
 
-[node name="Wall24" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall24" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(8, 698)
 
-[node name="Wall25" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall25" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(83, 702)
 
-[node name="Wall26" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall26" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(155, 714)
 
-[node name="Wall27" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall27" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(227, 705)
 
-[node name="Wall28" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
-position = Vector2(303, 709)
+[node name="Wall28" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-134, 650)
 
-[node name="Wall11" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall29" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-207, 660)
+
+[node name="Wall30" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-284, 649)
+
+[node name="Wall31" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-355, 660)
+
+[node name="Wall32" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-368, 729)
+
+[node name="Wall33" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-356, 801)
+
+[node name="Wall34" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-368, 873)
+
+[node name="Wall35" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-357, 947)
+
+[node name="Wall36" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-368, 1020)
+
+[node name="Wall37" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-360, 1092)
+
+[node name="Wall38" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-371, 1165)
+
+[node name="Wall39" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-364, 1238)
+
+[node name="Wall40" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-373, 1310)
+
+[node name="Wall41" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-300, 1317)
+
+[node name="Wall42" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-228, 1305)
+
+[node name="Wall43" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-156, 1317)
+
+[node name="Wall44" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-83, 1303)
+
+[node name="Wall45" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(-15, 1315)
+
+[node name="Wall46" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(58, 1306)
+
+[node name="Wall47" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(124, 1342)
+
+[node name="Wall48" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(192, 1374)
+
+[node name="Wall49" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(261, 1407)
+
+[node name="Wall50" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(329, 1440)
+
+[node name="Wall51" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(399, 1469)
+
+[node name="Wall52" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(468, 1493)
+
+[node name="Wall53" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(538, 1488)
+
+[node name="Wall54" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(610, 1494)
+
+[node name="Wall55" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(683, 1487)
+
+[node name="Wall56" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(750, 1502)
+
+[node name="Wall57" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(818, 1485)
+
+[node name="Wall58" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(889, 1497)
+
+[node name="Wall59" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(959, 1481)
+
+[node name="Wall60" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1026, 1494)
+
+[node name="Wall64" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1094, 1482)
+
+[node name="Wall65" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1165, 1485)
+
+[node name="Wall66" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1234, 1474)
+
+[node name="Wall67" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1306, 1482)
+
+[node name="Wall68" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1317, 1413)
+
+[node name="Wall69" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1304, 1344)
+
+[node name="Wall70" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1323, 1275)
+
+[node name="Wall71" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1302, 1206)
+
+[node name="Wall72" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1321, 1138)
+
+[node name="Wall73" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1298, 1071)
+
+[node name="Wall74" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1314, 1004)
+
+[node name="Wall75" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1291, 937)
+
+[node name="Wall76" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1310, 869)
+
+[node name="Wall77" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1293, 800)
+
+[node name="Wall80" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1205, 73)
+
+[node name="Wall81" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1280, 61)
+
+[node name="Wall82" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1283, 129)
+
+[node name="Wall83" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1274, 197)
+
+[node name="Wall84" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1286, 265)
+
+[node name="Wall85" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1270, 333)
+
+[node name="Wall86" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1289, 400)
+
+[node name="Wall87" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1362, 384)
+
+[node name="Wall88" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1434, 397)
+
+[node name="Wall89" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1507, 376)
+
+[node name="Wall90" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1579, 393)
+
+[node name="Wall91" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1652, 378)
+
+[node name="Wall92" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1724, 391)
+
+[node name="Wall93" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1797, 378)
+
+[node name="Wall94" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1868, 393)
+
+[node name="Wall95" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1940, 382)
+
+[node name="Wall96" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(2012, 395)
+
+[node name="Wall97" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(2083, 383)
+
+[node name="Wall98" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(2107, 452)
+
+[node name="Wall99" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(2090, 520)
+
+[node name="Wall100" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(2111, 588)
+
+[node name="Wall101" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(2091, 657)
+
+[node name="Wall102" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(2114, 728)
+
+[node name="Wall103" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(2090, 795)
+
+[node name="Wall104" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(2018, 778)
+
+[node name="Wall105" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1950, 798)
+
+[node name="Wall106" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1879, 781)
+
+[node name="Wall107" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1808, 800)
+
+[node name="Wall108" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1736, 781)
+
+[node name="Wall109" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1660, 796)
+
+[node name="Wall110" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1588, 780)
+
+[node name="Wall111" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1512, 796)
+
+[node name="Wall112" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1441, 779)
+
+[node name="Wall113" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(1366, 788)
+
+[node name="Wall61" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(130, 1272)
+
+[node name="Wall62" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(168, 1206)
+
+[node name="Wall63" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
+position = Vector2(201, 1135)
+
+[node name="Wall11" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(805, 60)
 
-[node name="Wall12" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall12" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(886, 79)
 
-[node name="Wall8" parent="TileMapLayer/walls" instance=ExtResource("2_kek77")]
+[node name="Wall8" parent="GameObjects/walls" instance=ExtResource("2_kek77")]
 position = Vector2(568, 69)
 
-[node name="Well" parent="TileMapLayer" instance=ExtResource("4_lquwl")]
+[node name="Well" parent="GameObjects" instance=ExtResource("4_lquwl")]
 position = Vector2(554, 331)
 
-[node name="Player" parent="TileMapLayer" instance=ExtResource("1_ig7tw")]
+[node name="Player" parent="GameObjects" instance=ExtResource("1_ig7tw")]
 position = Vector2(-59, -556)
 
-[node name="Plant" parent="TileMapLayer" instance=ExtResource("2_0xm2m")]
+[node name="Plant" parent="GameObjects" instance=ExtResource("2_0xm2m")]
 position = Vector2(911, 239)
 MAX_SATURATION = 50
 
-[node name="Plant2" parent="TileMapLayer" instance=ExtResource("2_0xm2m")]
+[node name="Plant2" parent="GameObjects" instance=ExtResource("2_0xm2m")]
 position = Vector2(143, 460)
 
-[node name="Plant3" parent="TileMapLayer" instance=ExtResource("2_0xm2m")]
-position = Vector2(-215, 863)
+[node name="Plant3" parent="GameObjects" instance=ExtResource("2_0xm2m")]
+position = Vector2(-86, 899)
 MAX_SATURATION = 175
 
-[node name="Plant4" parent="TileMapLayer" instance=ExtResource("2_0xm2m")]
-position = Vector2(649, 1400)
+[node name="Plant4" parent="GameObjects" instance=ExtResource("2_0xm2m")]
+position = Vector2(591, 1257)
 MAX_SATURATION = 225
 
-[node name="Plant5" parent="TileMapLayer" instance=ExtResource("2_0xm2m")]
-position = Vector2(1625, 495)
+[node name="Plant5" parent="GameObjects" instance=ExtResource("2_0xm2m")]
+position = Vector2(810, 737)
 MAX_SATURATION = 275
 
-[node name="Plant6" parent="TileMapLayer" instance=ExtResource("2_0xm2m")]
-position = Vector2(874, 907)
+[node name="Plant6" parent="GameObjects" instance=ExtResource("2_0xm2m")]
+position = Vector2(1911, 564)
 MAX_SATURATION = 325
+
+[node name="Well2" parent="GameObjects" instance=ExtResource("4_lquwl")]
+position = Vector2(1096, 1206)
 
 [node name="Flower_Letters" type="Node2D" parent="."]
 
@@ -531,10 +1110,10 @@ target = NodePath("Marker2D")
 [node name="Marker2D" type="Marker2D" parent="CutsceneCam"]
 position = Vector2(524, -458)
 
-[connection signal="restored" from="TileMapLayer/Plant" to="." method="_on_plant_restored"]
-[connection signal="restored" from="TileMapLayer/Plant2" to="." method="_on_plant_restored"]
-[connection signal="restored" from="TileMapLayer/Plant3" to="." method="_on_plant_restored"]
-[connection signal="restored" from="TileMapLayer/Plant4" to="." method="_on_plant_restored"]
-[connection signal="restored" from="TileMapLayer/Plant5" to="." method="_on_plant_restored"]
-[connection signal="restored" from="TileMapLayer/Plant6" to="." method="_on_plant_restored"]
+[connection signal="restored" from="GameObjects/Plant" to="." method="_on_plant_restored"]
+[connection signal="restored" from="GameObjects/Plant2" to="." method="_on_plant_restored"]
+[connection signal="restored" from="GameObjects/Plant3" to="." method="_on_plant_restored"]
+[connection signal="restored" from="GameObjects/Plant4" to="." method="_on_plant_restored"]
+[connection signal="restored" from="GameObjects/Plant5" to="." method="_on_plant_restored"]
+[connection signal="restored" from="GameObjects/Plant6" to="." method="_on_plant_restored"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

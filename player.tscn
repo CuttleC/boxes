@@ -82,6 +82,7 @@ offset_bottom = -58.0
 show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
 

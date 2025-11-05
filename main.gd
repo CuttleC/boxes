@@ -6,7 +6,7 @@ var time_for_another_flower_to_bloom = true
 #var camera_in_place = true
 
 func _ready():
-	$TileMapLayer/Player.start($TileMapLayer/StartPosition.position)
+	$GameObjects/Player.start($GameObjects/StartPosition.position)
 	flower_letters = get_tree().get_nodes_in_group("flower_letter")
 	flower_letters.shuffle()
 	plant_objectives = get_tree().get_nodes_in_group("plant_objective")
@@ -15,7 +15,7 @@ func _ready():
 func _process(delta):
 	#if !camera_in_place: return
 	if !blooming:
-		$CutsceneCam.position = $TileMapLayer/Player.position
+		$CutsceneCam.position = $GameObjects/Player.position
 		return
 	if !time_for_another_flower_to_bloom: return
 	
