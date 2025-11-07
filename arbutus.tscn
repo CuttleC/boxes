@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp26tsd7y76co"]
+
+[ext_resource type="Texture2D" uid="uid://cpurlkukblyg3" path="res://art/finalized/arbutus.png" id="1_wu45t"]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wu45t")

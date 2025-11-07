@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://x5hh3sbcmgf4"]
+[gd_scene load_steps=14 format=4 uid="uid://x5hh3sbcmgf4"]
 
 [ext_resource type="Script" uid="uid://y0far1yhdxu2" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cdb4wh52vcybf" path="res://player.tscn" id="1_ig7tw"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ca7i7j0w6qe75" path="res://art/finalized/grassyground_1.png" id="2_4c57u"]
 [ext_resource type="PackedScene" uid="uid://b7ehmcsariqkw" path="res://wall.tscn" id="2_kek77"]
 [ext_resource type="PackedScene" uid="uid://ccoqscqedkmq1" path="res://cobble_deco.tscn" id="3_4c57u"]
+[ext_resource type="PackedScene" uid="uid://bp26tsd7y76co" path="res://arbutus.tscn" id="4_efxa6"]
 [ext_resource type="PackedScene" uid="uid://boyumyisgsdj7" path="res://well.tscn" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://b201yf0dso73l" path="res://fun_plant.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://l8t87qudambv" path="res://flower_letter.tscn" id="6_7mycd"]
@@ -193,6 +194,42 @@ position = Vector2(18, 925)
 
 [node name="Area2D12" parent="Deco" instance=ExtResource("3_4c57u")]
 position = Vector2(346, 908)
+
+[node name="Area2D56" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(1453, 250)
+
+[node name="Area2D57" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(1984, 216)
+
+[node name="Area2D58" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(1484, 964)
+
+[node name="Area2D59" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(-252, 546)
+
+[node name="Area2D65" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(-116, 1527)
+
+[node name="Area2D66" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(699, 1656)
+
+[node name="Area2D67" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(1406, 1571)
+
+[node name="Area2D60" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(191, -21)
+
+[node name="Area2D61" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(965, -634)
+
+[node name="Area2D62" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(1117, -166)
+
+[node name="Area2D63" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(29, -187)
+
+[node name="Area2D64" parent="Deco" instance=ExtResource("4_efxa6")]
+position = Vector2(134, -722)
 
 [node name="GameObjects" type="TileMapLayer" parent="."]
 y_sort_enabled = true
